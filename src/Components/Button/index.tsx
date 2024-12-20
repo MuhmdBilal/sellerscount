@@ -13,7 +13,7 @@ interface YourComponentProps {
 const Button: React.FC<YourComponentProps> = ({
   buttonText,
   buttonColor,
-  borderColor = buttonColor,
+  borderColor,
   buttonWidth = "250px",
   fontColor = "#000",
   fontWeight = 600,
