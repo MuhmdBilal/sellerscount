@@ -1,0 +1,38 @@
+.move-input-icon {
+    position: absolute;
+    right: 70px;
+    top: 8px;
+    font-size: 23px;
+    color: #B8A1A1;
+
+}
+
+.btn-configure {
+    display: flex;
+    width: 78px;
+    height: 27px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #FBBC31;
+    position: absolute;
+    right: 20%;
+    top: 0px;
+    color: var(--components-switch-slideFill, #000);
+    font-family: Outfit;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+.css-1f0pawm{
+    min-height: 400px !important;
+}
+@media only screen and (max-width: 600px) {
+    .btn-configure {
+        right: 24%;
+    }
+}

@@ -1,0 +1,53 @@
+.history-box {
+  background-color: white;
+  filter: drop-shadow(0px 10px 22px rgba(198, 198, 198, 0.3));
+  padding: 10px;
+  border-radius: 14px;
+  margin-top: 4px;
+  border: 1px solid #e3e0e0;
+}
+.history-details {
+  color: #484848;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.history-timestamp {
+  color: #87858a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.14px;
+}
+
+.history-credentials {
+  padding-top: 10px;
+}
+
+.history-credentials p {
+  color: #484848;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  min-width: 55px !important;
+}
+.first-img {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+}
+@media (max-width: 775px) {
+  .history-box {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .first-img {
+    width: 100%;
+    max-width: 120px;
+  }
+}

@@ -1,0 +1,30 @@
+.scans-card,
+.scans-feature-card {
+    background-color: #4B1B97;
+    border-radius: 6px;
+    background: #4B1B97;
+    color: white;
+    box-shadow: 0px 10px 22px 0px rgba(198, 198, 198, 0.30);
+    /* min-width: 290px; */
+    height: 91px;
+    flex-shrink: 0;
+    padding: 10px;
+
+}
+
+.scans-card h1 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.scans-card p,
+.scans-feature-card p {
+    font-size: 18px;
+    font-weight: 300;
+    padding-top: 8px;
+}
+
+.scans-feature-card p {
+    text-decoration: underline;
+    padding-top: 8px;
+}

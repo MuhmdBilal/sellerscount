@@ -1,0 +1,166 @@
+.custom-grid-table .MuiDataGrid-root {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.custom-grid-table {
+    position: relative !important;
+}
+
+.css-ptkaw2-MuiDataGrid-root {
+    border-radius: 12px !important;
+    border: none !important;
+    border-radius: 6px;
+    box-shadow: 0px 10px 22px 0px rgba(198, 198, 198, 0.30);
+}
+
+.custom-grid-table .MuiDataGrid-columnHeaders {
+    background-color: #4B1B97;
+    color: white !important;
+    border-radius: 12px 12px 0 0;
+    font-family: Outfit !important;
+    cursor: pointer;
+}
+
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-cellContent {
+    font-family: Outfit !important;
+    cursor: pointer;
+}
+
+.custom-grid-table .css-t89xny-MuiDataGrid-columnHeaderTitle {
+    color: white !important;
+    font-family: Outfit !important;
+    font-size: 20px !important;
+}
+
+.custom-grid-table .MuiDataGrid-columnHeader {
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Outfit !important;
+    padding: 8px;
+}
+.css-5wdp45-MuiDataGrid-root .MuiDataGrid-container--top [role=row], .css-5wdp45-MuiDataGrid-root .MuiDataGrid-container--bottom [role=row] {
+    background: #4B1B97 !important;
+}
+.custom-grid-table .MuiDataGrid-column:first-child {
+    font-size: 40px !important;
+    font-family: Outfit !important;
+}
+
+.custom-grid-table .MuiDataGrid-row:last-child {
+    border-radius: 0px 0px 12px 12px;
+    border-bottom: none;
+    font-family: Outfit !important;
+}
+
+ .MuiDataGrid-row:nth-child(odd) {
+    background-color: #F1F1F1;
+    font-family: Outfit !important;
+    cursor: pointer;
+}
+
+.custom-grid-table .MuiDataGrid-row:nth-child(even) {
+    background-color: #FFFFFF;
+    font-family: Outfit !important;
+    cursor: pointer;
+}
+
+.custom-grid-table .MuiDataGrid-row:hover {
+    background-color: #F1F1F1 !important;
+    font-family: Outfit !important;
+    cursor: pointer;
+}
+
+.custom-grid-table .MuiDataGrid-row.Mui-selected {
+    background-color: #F1F1F1 !important;
+    font-family: Outfit !important;
+    cursor: pointer;
+    color: #0c5460;
+}
+
+.custom-grid-table .MuiDataGrid-cell {
+    padding: 8px;
+    font-family: Outfit !important;
+    border-bottom: none !important;
+}
+
+
+.amazon-title {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+}
+
+.points {
+    color: #333;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18.57px;
+}
+
+.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-cellContent {
+    color: #4D4C4F;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center;
+}
+
+.bold-category {
+    color: #1B1721;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center;
+}
+
+.custom-grid-table .MuiDataGrid-row {
+    min-height: 40px !important;
+    max-height: 40px !important;
+}
+
+.table-pagination {
+    position: relative;
+}
+
+.pagination-box {
+    position: absolute;
+    padding: 0px 20px;
+    width: 100%;
+    bottom: 30px;
+
+}
+
+.sales-rank-table .css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell--textLeft:first-child {
+    text-align: left !important;
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    -webkit-justify-content: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.sales-rank-table .css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell--textLeft:not(:first-child) {
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.centered-cell {
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    .pagination-box {
+        padding: 0px 10px;
+    }
+}
+
+.product-item-table .css-20a7a0 {
+    height: 100% !important;
+    overflow-y: scroll !important;
+}

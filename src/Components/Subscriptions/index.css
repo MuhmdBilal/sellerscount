@@ -1,0 +1,81 @@
+.subscription-item {
+  padding: 10px 0;
+}
+
+.subscription-title {
+  cursor: pointer;
+}
+
+.subscription-content {
+  transition: all 0.3s ease;
+}
+
+.subscription-title {
+  background-color: #4b1b97;
+  color: white;
+  border-radius: 6px 6px 0px 0px;
+  height: 50px;
+  flex-shrink: 0;
+  padding: 10px 10px 10px 20px;
+}
+
+.subscription-item h2 {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.subscription-content {
+  border-radius: 6px;
+  background: var(--common-white-main, #fff);
+  box-shadow: 0px 10px 22px 0px rgba(198, 198, 198, 0.3);
+  flex-shrink: 0;
+  padding: 10px;
+  position: relative;
+}
+
+.subscription-content p {
+  color: #484848;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.form {
+  background-color: red;
+}
+
+.subscription-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscription-form-group label {
+  color: #353535;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.subscription-form-group input {
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #f3f1f8;
+  background: #fff;
+  padding: 15px;
+  color: var(--Paragraph, #87858a);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.btn-input {
+  position: relative;
+}
+
+.form-btns {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+}

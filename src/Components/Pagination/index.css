@@ -1,0 +1,35 @@
+.pagination-text,
+.rows-description {
+    color: #AAA;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.pagination-container .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 0px !important;
+}
+
+.pagination-controls span {
+    padding: 0px 10px !important;
+    font-size: 12px !important;
+}
+
+.chevron {
+    cursor: pointer;
+    color: #314D7F;
+    font-size: 16px;
+}
+
+.chevron.disabled {
+    color: #CFCFCF;
+    cursor: not-allowed;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    font-size: 12px !important;
+}
+
+.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+    font-size: 12px !important;
+    padding: 0 !important;
+}

@@ -1,0 +1,145 @@
+.accordion-item-integrations {
+    padding: 10px 0;
+}
+
+.accordion-title-integrations {
+    cursor: pointer;
+}
+
+.chevron-icon-integrations {
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.accordion-content-integrations {
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.filter-box {
+    border-radius: 12px;
+    border: 0.5px solid #B0B0B0;
+    background: rgba(255, 255, 255, 0.00);
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+}
+
+.title-heading-integrations {
+    color: #484848;
+    font-family: Outfit;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.accordion-title-integrations {
+    background-color: #4B1B97;
+    color: white;
+    border-radius: 6px 6px 0px 0px;
+    height: 50px;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.accordion-item-integrations h2 {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.accordion-content-integrations {
+    border-radius: 6px;
+    background: var(--common-white-main, #FFF);
+    box-shadow: 0px 10px 22px 0px rgba(198, 198, 198, 0.30);
+    min-height: 250px;
+    flex-shrink: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.btn-box-integrations {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.accordion-content-integrations li {
+    color: #484848;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    list-style: disc;
+}
+
+.accordion-content-integrations p {
+    color: #484848;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.filter-box {
+    color: #ADADAD;
+    font-size: 24px;
+}
+
+.integration-lists ul {
+    padding-left: 30px;
+}
+
+
+@media only screen and (max-width: 920px) {
+    .btn-box-integrations {
+        margin-top: 8px;
+        position: static;
+        gap: 6px !important;
+    }
+
+    .accordion-item-integrations {
+        padding: 5px 0px;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-box-integrations {
+        position: static;
+        gap: 6px !important;
+    }
+
+    .integration-image {
+        width: 100% !important;
+        max-width: 220px;
+        margin: auto;
+    }
+
+    .accordion-content-integrations li {
+        font-size: 12px;
+
+    }
+
+    .accordion-content-integrations p {
+        font-size: 12px;
+    }
+
+    .title-heading {
+        font-size: 24px !important;
+    }
+
+    .accordion-item-integrations h2 {
+        font-size: 20px;
+    }
+
+    .accordion-title-integrations {
+
+        padding: 4px 10px !important;
+        height: 38px;
+    }
+}

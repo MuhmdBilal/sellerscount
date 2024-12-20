@@ -1,0 +1,221 @@
+.btn-refresh-scans {
+    border: 1px solid #4B1B97;
+    display: flex;
+    width: 29px;
+    height: 27px;
+    padding: 1px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 4px !important;
+}
+
+.btn-refresh-scans svg {
+    height: 17px;
+    width: 17px;
+}
+
+.css-1rxsvxt {
+    font-size: 16px !important;
+}
+
+.css-ni1kz0 {
+    z-index: unset !important;
+    width: unset !important;
+}
+
+:where(.css-dev-only-do-not-override-ni1kz0).ant-btn-variant-solid,
+:where(.css-ni1kz0).ant-btn-variant-solid {
+    background-color: #4B1B97;
+    font-family: Outfit !important;
+}
+
+:where(.css-dev-only-do-not-override-ni1kz0).ant-btn-variant-outlined {
+    font-family: Outfit !important;
+}
+
+:where(.css-dev-only-do-not-override-ni1kz0).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover,
+:where(.css-ni1kz0).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+    background: #4B1B97;
+}
+
+:where(.css-ni1kz0).ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover,
+:where(.css-dev-only-do-not-override-ni1kz0).ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
+    border-color: #4B1B97 !important;
+    color: #4B1B97 !important;
+}
+
+.css-imrjgg-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+    color: #808080 !important;
+}
+
+.css-aymtem-MuiDataGrid-virtualScrollerContent {
+    height: auto !important;
+}
+
+.css-2hy7sk-MuiFormLabel-root-MuiInputLabel-root,
+.css-j218zi-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+    font-family: Outfit !important;
+}
+
+.css-20a7a0 {
+    height: unset !important;
+}
+
+.css-j0riat-MuiSelect-nativeInput {
+    font-family: Outfit !important;
+}
+
+.btn-download-scans {
+    border: 1px solid #4B1B97;
+    display: flex;
+    width: 29px;
+    height: 27px;
+    padding: 1px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 4px !important;
+}
+
+.btn-download-scans svg {
+    width: 17px;
+    height: 17px;
+}
+
+.MuiDataGrid-cell button svg {
+    color: #4B1B97 !important;
+    font-size: 12px !important;
+}
+
+.table-pagination .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)>.MuiDataGrid-cell {
+    min-height: 22px !important;
+    max-height: 22px !important;
+    height: 22px !important;
+}
+
+.custom-grid-table .MuiDataGrid-row:nth-child(odd) {
+    display: flex;
+    align-items: center;
+}
+
+.custom-grid-table .MuiDataGrid-row:nth-child(even) {
+    display: flex;
+    align-items: center;
+}
+
+.table-pagination .css-1kwdphh-MuiDataGrid-virtualScrollerContent {
+    height: 470px !important;
+}
+
+.css-aop0yh .MuiDataGrid-columnHeaderTitleContainer {
+    color: white !important;
+}
+
+.custom-grid-table .css-t89xny-MuiDataGrid-columnHeaderTitle {
+    color: white !important;
+}
+
+
+.css-aop0yh .MuiDataGrid-cell:focus {
+    outline: none !important;
+}
+
+.scans-table-page {
+    position: relative !important;
+    ;
+}
+
+.pagination-dialog {
+    padding: 0px 20px !important;
+    width: 100% !important;
+    right: 0px;
+    bottom: 12px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border: none !important;
+    outline: none !important;
+}
+
+.css-11dqcl8-MuiDataGrid-virtualScrollerRenderZone {
+    display: flex;
+    gap: 0px;
+    margin-top: 0px;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-virtualScrollerContent .MuiDataGrid-row {
+    max-height: 40px !important;
+    min-height: 40px !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell {
+    max-height: 40px !important;
+    min-height: 40px !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell--textLeft {
+    display: flex;
+    align-items: center;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within,
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+    outline: none;
+    outline-offset: none;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell:focus {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within,
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-container--top [role=row] {
+    background-color: #4B1B97 !important;
+    color: white !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-row--borderBottom .MuiDataGrid-columnHeader {
+    color: white !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainerContent:first-child {
+    margin: 0 0 !important;
+    font-size: 14px !important;
+}
+
+.css-1bgckiu-MuiDataGrid-main {
+    max-height: 520px;
+    min-height: 520px;
+}
+
+.css-dwkzlu-MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainerContent {
+    margin: 0 auto !important;
+}
+
+.css-dwkzlu-MuiDataGrid-root {
+    max-height: 520px;
+    min-height: 520px;
+}
+
+.new-scans-table .css-1bgckiu-MuiDataGrid-main {
+    max-height: 520px;
+    min-height: 590px;
+}
+
+.new-scans-table .MuiDataGrid-virtualScrollerContent,
+.new-scans-table .css-1xdhyk6 {
+    height: 480px !important;
+}
+
+.padding-icon {
+    padding-top: 11px !important;
+}
