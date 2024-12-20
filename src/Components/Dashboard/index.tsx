@@ -16,56 +16,42 @@ import Verify from "../EmailVerfiy";
 import { productUpload, token } from "../../Service/services";
 import Loader from "../Loader";
 import { useNavigate } from "react-router-dom";
+
 interface ResultProps {
-  searchResult: any;
+  searchResult: string | null;
 }
-const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
-  const [isusername, setIsUserName] = useState<any>(null);
-  const [isData, setData] = useState<any>([]);
-  const [isresponse, setIsResponse] = useState<any>([]);
-  const [isRow, setIsRow] = useState<any>([]);
-  const [isColumns, setIsColumns] = useState<any>([]);
-  const [isLoading, setIsLoading] = useState<any>(true);
-  const [isTableLoading, setIsTableLoading] = useState<any>(false);
-  const [isPerPage, setIsPerPage] = useState<any>(10);
-  const [isCurrentPage, setIsCurrentPage] = useState<any>(1);
-  const [isCount, setIsCount] = useState<any>([]);
+
+const Dashboard: React.FC<ResultProps> = ({ searchResult }) => {
+  const [isUsername, setIsUserName] = useState<string | null>(null);
+  const [isData, setData] = useState<any[]>([]);
+  const [isResponse, setIsResponse] = useState<any[]>([]);
+  const [isRow, setIsRow] = useState<any[]>([]);
+  const [isColumns, setIsColumns] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isTableLoading, setIsTableLoading] = useState<boolean>(false);
+  const [isPerPage, setIsPerPage] = useState<number>(10);
+  const [isCurrentPage, setIsCurrentPage] = useState<number>(1);
+  const [isCount, setIsCount] = useState<number>(0);
   const navigate = useNavigate();
+
   useEffect(() => {
     const userId = localStorage.getItem("userProfile");
     const userName = userId ? JSON.parse(userId) : null;
-    setIsUserName(userName?.userName);
+    setIsUserName(userName?.userName ?? null);
     token();
   }, []);
+
   useEffect(() => {
     getProductUpload();
     setIsTableLoading(true);
   }, [isCurrentPage, isPerPage, searchResult]);
-  const capitalizeFirstLetter = (string: any) => {
+
+  const capitalizeFirstLetter = (string: string): string => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
-  const getProductUpload = async () => {
-    let request = {};
-    if (searchResult) {
-      request = {
-        page: isCurrentPage,
-        perPage: isPerPage,
-        filter: [
-          {
-            field: "FileName",
-            filterType: 10,
-            value: searchResult,
-            sortType: 0,
-          },
-        ],
-      };
-    } else {
-      request = {
-        page: isCurrentPage,
-        perPage: isPerPage,
-      };
-    }
 
+  const getProductUpload = async () => {
+    let request = buildRequest();
     try {
       const response = await productUpload(request);
       if (response.status === 200) {
@@ -82,19 +68,51 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
       }
     }
   };
-  useEffect(() => {
-    if (!isData || isData?.length === 0) {
-      setIsColumns([]);
 
+  const buildRequest = (): any => {
+    if (searchResult) {
+      return {
+        page: isCurrentPage,
+        perPage: isPerPage,
+        filter: [
+          {
+            field: "FileName",
+            filterType: 10,
+            value: searchResult,
+            sortType: 0,
+          },
+        ],
+      };
+    } else {
+      return {
+        page: isCurrentPage,
+        perPage: isPerPage,
+      };
+    }
+  };
+
+  useEffect(() => {
+    if (isData.length === 0) {
+      setIsColumns([]);
       setIsRow([]);
     } else {
-      const columns = Object.keys(isData[0]).map((column) => {
-        const baseColumn = {
-          field: column,
-          headerName: capitalizeFirstLetter(column),
-          width: 180,
-        };
-        if (column === "fileName") {
+      const columns = buildColumns();
+      const rows = buildRows();
+      setIsColumns(columns);
+      setIsRow(rows);
+    }
+  }, [isData]);
+
+  const buildColumns = (): any[] => {
+    return Object.keys(isData[0]).map((column) => {
+      const baseColumn = {
+        field: column,
+        headerName: capitalizeFirstLetter(column),
+        width: 180,
+      };
+
+      switch (column) {
+        case "fileName":
           return {
             ...baseColumn,
             headerName: "File Name",
@@ -108,7 +126,7 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
               </div>
             ),
           };
-        } else if (column === "numberOfRecords") {
+        case "numberOfRecords":
           return {
             ...baseColumn,
             headerName: "Line Count",
@@ -116,21 +134,19 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
               <div className="table-text">{params.row.numberOfRecords}</div>
             ),
           };
-        } else if (column === "processedPercentage") {
+        case "processedPercentage":
           return {
             ...baseColumn,
             headerName: "Status",
             renderCell: (params: any) => (
               <div className="centered-cell">
-                {params.value !== null && params.value == 0 ? (
-                  <>{"InProgress"}</>
-                ) : (
-                  "Completed"
-                )}
+                {params.value !== null && params.value === 0
+                  ? "InProgress"
+                  : "Completed"}
               </div>
             ),
           };
-        } else if (column === "date") {
+        case "date":
           return {
             ...baseColumn,
             headerName: "Date",
@@ -144,7 +160,7 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
               </div>
             ),
           };
-        } else if (column === "countryCode") {
+        case "countryCode":
           return {
             ...baseColumn,
             headerName: "Market Place",
@@ -152,25 +168,23 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
               <div className="centered-cell">{params.row.countryCode}</div>
             ),
           };
-        } else {
+        default:
           return baseColumn;
-        }
-      });
-      const rows = isData?.map((item: any, index: any) => ({
-        id: index,
-        ...item,
-      }));
-      const updateColumn = columns.filter(
-        (column) => column.field !== "productUploadId"
-      );
-      setIsColumns(updateColumn);
-      setIsRow(rows);
-    }
-  }, [isData]);
+      }
+    });
+  };
 
-  const handlePageChange = (value: any) => {
+  const buildRows = (): any[] => {
+    return isData.map((item, index) => ({
+      id: index,
+      ...item,
+    }));
+  };
+
+  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setIsCurrentPage(value);
   };
+
   const handleTitleClick = (params: any) => {
     navigate(
       `/product-details/${params.row.productUploadId}/${params.row.countryCode}/${params.row.date}/${params.row.fileName}`
@@ -180,7 +194,7 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
   useEffect(() => {
     const getTotalRecordsCount = () => {
       try {
-        const totalCount = isresponse.data.reduce(
+        const totalCount = isResponse.data.reduce(
           (acc: number, item: any) => acc + item.numberOfRecords,
           0
         );
@@ -191,7 +205,7 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
     };
 
     getTotalRecordsCount();
-  }, [isresponse]);
+  }, [isResponse]);
 
   return (
     <>
@@ -202,9 +216,8 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
         </div>
       ) : (
         <Container fluid>
-          {" "}
           <Row className="mt-4">
-            <p className="admin">Welcome Back, {isusername}!</p>
+            <p className="admin">Welcome Back, {isUsername}!</p>
             <Col md={3} sm={12}>
               <div className="items-grid">
                 <div>
@@ -223,7 +236,7 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
             <Col md={3} sm={12}>
               <div className="items-grid">
                 <div>
-                  <span className="admins">{isresponse.total}</span>
+                  <span className="admins">{isResponse.total}</span>
                   <br />
                   Files Uploaded
                 </div>
@@ -302,29 +315,11 @@ const Dashboard: React.FunctionComponent<ResultProps> = ({ searchResult }) => {
                   />
                   <div className="d-flex align-items-start justify-content-between">
                     <div>
-                      {/* <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                        <InputLabel id="demo-select-small-label">
-                          Page
-                        </InputLabel>
-                        <Select
-                          labelId="demo-select-small-label"
-                          id="demo-select-small"
-                          value={isPerPage}
-                          label="Page"
-                          onChange={handleChange}
-                        >
-                          <MenuItem value={10}>10</MenuItem>
-                          <MenuItem value={20}>20</MenuItem>
-                          <MenuItem value={30}>30</MenuItem>
-                        </Select>
-                      </FormControl> */}
-                    </div>
-                    <div>
                       <Stack spacing={2} className="mt-2 mb-5">
                         <Pagination
                           variant="outlined"
                           shape="rounded"
-                          count={isresponse.lastPage}
+                          count={isResponse.lastPage}
                           page={isCurrentPage}
                           onChange={handlePageChange}
                         />
